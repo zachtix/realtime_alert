@@ -16,8 +16,6 @@ const io = new Server(httpServer, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
-    allowedHeaders: ["Authorization"],
-    credentials: true,
   },
 });
 io.use((socket: Socket, next) => {
