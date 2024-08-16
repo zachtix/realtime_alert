@@ -12,10 +12,12 @@ const httpServer = createServer(app);
 let initMessage: any = null;
 
 const io = new Server(httpServer, {
-  //   path: "/alert",
+  path: "/member-alert/",
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
+    allowedHeaders: ["Authorization"],
+    credentials: true,
   },
 });
 io.use((socket: Socket, next) => {
